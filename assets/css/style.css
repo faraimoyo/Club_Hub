@@ -1,12 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Lato:wght@700&family=Open+Sans:wght@700&display=swap');
 
-* {
+*::before,
+*:after {
     margin: 0;
     padding: 0;
-    border: none;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Lato, sans-serif;
     font-weight: 700; 
+    color: #151616;
+    display: absolute;
+}
+
+/* headings and logo */
+
+nav {
+    height: auto;
+    width:auto;
+    min-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #dbddc0;
+    margin: auto;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-size: 30px;
+    letter-spacing: 1px;
+    padding: 0 30px;
+}
+
+a:before {
+    content: "";
+    position: absolute;
+    height: 1em;
+    width: 100%;
+    bottom: -20em;
+}
+
+a:after {
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 5px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+a:hover {
+    color: rgb(12, 130, 233);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+#hero-image {
+    background-image: url('../images/hero-image-3.webp');
+    height: 100vh;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.club {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(18rem,auto));
+    gap: 2rem;
+}
+
+.club-img img {
+    border-radius: 3rem 0 3rem 3rem;
+}
+
+.club-text span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(rgb(29, 30, 31));
+}
+.club-text h2 {
+    font-size: 1.7rem;
+}
+.club-text p {
+    font-size: 1rem;
+    margin: 1rem 0 1rem;
+}
+
+@ media (max-width: 1080px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 880px) {
+    section {
+        padding: 4rem 0 3rem;
+    }
 }
